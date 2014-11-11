@@ -12,7 +12,7 @@
         <th class="qty">Qty</th>
         <th>Total</th>
       </tr>
-      <tr class="animate-repeat" ng-repeat="item in inventory | filter:searchText | orderBy:'category' ">
+      <tr class="animate-inventory" ng-repeat="item in inventory | filter:searchText | orderBy:'category' ">
         <td>{{ item.category }}</td>
         <td>{{ item.description }}</td>
         <td ng-class="{ 'on-sale' : item.onSale }">{{ item.price | currency }}</td>
@@ -26,7 +26,7 @@
   <div class="row">
     <h2>Your Cart:</h2>
     <ul>
-      <li class="animate-repeat" ng-repeat="item in cart | orderBy:'category'">
+      <li class="animate-inventory" ng-repeat="item in cart | orderBy:'category'">
         <span>{{ item.qty + ' x ' + item.description + ' = ' + (getCost(item) | currency) }}</span>
         <button class="btn-danger btn-xs" ng-click="removeItem(item);">Remove Item</button>
         </br>

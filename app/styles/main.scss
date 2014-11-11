@@ -102,4 +102,32 @@ body {
 
 .qty {
   width: 60px;
+}
+
+$animation-duration: 1.5s;
+
+.animate-inventory {
+  line-height: 40px;
+  list-style: none;
+  box-sizing: border-box;
+  &.ng-move, &.ng-enter {
+    -webkit-transition: all linear $animation-duration;
+    transition: all linear $animation-duration;
+  }
+  &.ng-leave {
+    -webkit-transition: all linear $animation-duration;
+    transition: all linear $animation-duration;
+    &.ng-leave-active {
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+  &.ng-move, &.ng-enter {
+    opacity: 0;
+    max-height: 0;
+  }
+  &.ng-leave, &.ng-move.ng-move-active, &.ng-enter.ng-enter-active {
+    opacity: 1;
+    max-height: 40px;
+  }
 } 
